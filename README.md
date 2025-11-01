@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Akash Rawat — Personal Portfolio
 
 React + Tailwind portfolio with animations.
@@ -13,3 +14,6 @@ React + Tailwind portfolio with animations.
 - Vercel/Netlify: import this repo, set build command `npm run build`, output `dist`.
 
 
+=======
+# my-portfolio
+>>>>>>> eab27ffd89bf39b05b39fc9176a40abe679ec74b
