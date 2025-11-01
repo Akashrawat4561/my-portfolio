@@ -1,0 +1,15 @@
+## Akash Rawat — Personal Portfolio
+
+React + Tailwind portfolio with animations.
+
+### Scripts
+
+- `npm run dev` – start dev server
+- `npm run build` – production build
+- `npm run preview` – preview production build
+
+### Deploy
+
+- Vercel/Netlify: import this repo, set build command `npm run build`, output `dist`.
+
+
