@@ -34,7 +34,7 @@ const projects = [
     featured: false,
     links: {
       live: '#',
-      github: 'https://github.com/Akashrawat4561/Portfolio-Website'
+      github: 'https://github.com/Akashrawat4561/my-portfolio'
     }
   }
 ];

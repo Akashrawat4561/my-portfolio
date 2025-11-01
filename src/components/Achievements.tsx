@@ -17,8 +17,8 @@ const achievements = [
     color: 'from-amber-500 to-orange-500'
   },
   {
-    title: 'Skitech Innothon 2.0 Participant',
-    description: 'Developed Budget Quest App (2025)',
+    title: 'Volunteer at Skitech Innothon 2.0',
+    // description: 'Developed Budget Quest App (2025)',
     icon: Users,
     color: 'from-green-500 to-emerald-500'
   }
