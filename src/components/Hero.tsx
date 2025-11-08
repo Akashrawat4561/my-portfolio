@@ -1,4 +1,3 @@
-// components/Hero.tsx
 import { motion } from 'framer-motion';
 import { ArrowRight, Download, MapPin } from 'lucide-react';
 import { Button } from './ui/Button';
@@ -6,9 +5,8 @@ import ProfileImg from './WhatsApp Image 2025-10-31 at 18.34.13_1ec6d6b3.jpg';
 
 export function Hero() {
   const handleDownloadResume = () => {
-    // Create a temporary link element
     const link = document.createElement('a');
-    link.href = '/Resume.pdf'; // Make sure Resume.pdf is in your public folder
+    link.href = '/Resume.pdf';
     link.download = 'Akash_Rawat_Resume.pdf';
     document.body.appendChild(link);
     link.click();
@@ -17,7 +15,6 @@ export function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-violet-50 via-white to-indigo-50 dark:from-neutral-900 dark:via-neutral-800 dark:to-violet-900/20" />
       <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-violet-200/40 blur-3xl dark:bg-violet-800/20" />
       <div className="absolute bottom-1/4 right-1/4 h-64 w-64 rounded-full bg-indigo-200/40 blur-3xl dark:bg-indigo-800/20" />
@@ -97,10 +94,10 @@ export function Hero() {
               className="mt-12 flex flex-wrap justify-center gap-8 lg:justify-start"
             >
               {[
-                { value: '2', label: 'Projects Completed' },
+                { value: '3+', label: 'Projects Completed' },
                 { value: '3⭐', label: 'HackerRank Coder' },
                 { value: '5+', label: 'Certifications' },
-              ].map((stat, index) => (
+              ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div className="text-2xl font-bold text-neutral-900 dark:text-white">{stat.value}</div>
                   <div className="text-sm text-neutral-600 dark:text-neutral-400">{stat.label}</div>

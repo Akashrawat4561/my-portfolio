@@ -15,17 +15,17 @@ const projects = [
       github: 'https://github.com/Akashrawat4561/mindspace-app'
     }
   },
-  // {
-  //   title: 'Student Accommodation Finder (SecureStay)',
-  //   tech: ['React.js', 'Node.js', 'Express', 'MongoDB', 'Google Maps API'],
-  //   desc: 'A platform connecting students with verified hostel and PG listings, featuring smart filters, interactive maps, and landlord management tools.',
-  //   image: undefined,
-  //   featured: false,
-  //   links: {
-  //     live: '#',
-  //     github: '#'
-  //   }
-  // },
+  {
+    title: 'Student Accommodation Finder (SecureStay)',
+    tech: ['React.js', 'Node.js', 'Express', 'MongoDB', 'Google Maps API'],
+    desc: 'A platform connecting students with verified hostel and PG listings, featuring smart filters, interactive maps, and landlord management tools.',
+    image: 'SecureStay.jpg',
+    featured: false,
+    links: {
+      live: '#',
+      github: '#'
+    }
+  },
   {
     title: 'Portfolio Website',
     tech: ['React.js', 'TypeScript', 'Tailwind CSS'],
