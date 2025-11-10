@@ -127,12 +127,12 @@ export function Hero() {
               </div>
               
               {/* Floating elements - Only keeping the available status */}
-              {/* <div className="absolute -top-4 -right-4 rounded-2xl bg-white/80 p-3 shadow-2xl backdrop-blur-sm dark:bg-neutral-800/80">
+              <div className="absolute -top-4 -right-4 rounded-2xl bg-white/80 p-3 shadow-2xl backdrop-blur-sm dark:bg-neutral-800/80">
                 <div className="flex items-center gap-2">
                   <div className="h-3 w-3 rounded-full bg-green-500" />
                   <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">Available</span>
                 </div>
-              </div> */}
+              </div>
             </div>
           </motion.div>
         </div>
