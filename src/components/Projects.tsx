@@ -173,13 +173,13 @@ export function Projects() {
                 </div>
 
                 <div className="flex gap-3">
-                  <Button variant="primary" size="sm" className="flex-1 rounded-lg">
+                  <Button variant="primary"  className="flex-1 rounded-lg">
                     <a href={project.links.live} className="inline-flex items-center gap-2 text-xs">
                       <ExternalLink className="h-3 w-3" />
                       Demo
                     </a>
                   </Button>
-                  <Button variant="secondary" size="sm" className="flex-1 rounded-lg">
+                  <Button variant="secondary"  className="flex-1 rounded-lg">
                     <a href={project.links.github} className="inline-flex items-center gap-2 text-xs">
                       <Github className="h-3 w-3" />
                       Code
