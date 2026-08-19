@@ -1,4 +1,3 @@
-// components/Contact.tsx
 import { motion } from 'framer-motion';
 import { Mail, Github, Linkedin, MessageCircle } from 'lucide-react';
 import { Section } from './ui/Section';

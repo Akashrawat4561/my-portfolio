@@ -6,7 +6,7 @@ import ProfileImg from './WhatsApp Image 2025-10-31 at 18.34.13_1ec6d6b3.jpg';
 export function Hero() {
   const handleDownloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/Resume.pdf';
+    link.href = '/update resume.pdf';
     link.download = 'Akash_Rawat_Resume.pdf';
     document.body.appendChild(link);
     link.click();

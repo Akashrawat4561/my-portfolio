@@ -1,4 +1,3 @@
-// components/Achievements.tsx
 import { motion } from 'framer-motion';
 import { Section } from './ui/Section';
 import { Trophy, Code, Users } from 'lucide-react';

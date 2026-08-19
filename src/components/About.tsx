@@ -1,4 +1,3 @@
-// components/About.tsx
 import { motion } from 'framer-motion';
 import { Section } from './ui/Section';
 import { GraduationCap, MapPin, Calendar, Award } from 'lucide-react';
