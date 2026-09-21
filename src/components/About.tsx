@@ -1,13 +1,13 @@
-import { motion } from 'framer-motion';
-import { Section } from './ui/Section';
-import { GraduationCap, MapPin, Calendar, Award } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Section } from "./ui/Section";
+import { GraduationCap, MapPin, Calendar, Award } from "lucide-react";
 
 export function About() {
   return (
-    <Section 
-      id="about" 
-      title="About Me" 
-      subtitle="Passionate developer crafting digital experiences with modern technologies"
+    <Section
+      id="about"
+      title="About Me"
+      subtitle="Full-stack developer focused on building scalable and user-friendly web applications"
       className="bg-gradient-to-b from-white to-neutral-50 dark:from-neutral-900 dark:to-neutral-800"
     >
       <div className="max-w-4xl mx-auto">
@@ -19,9 +19,11 @@ export function About() {
           className="text-center mb-12"
         >
           <p className="text-xl text-neutral-700 dark:text-neutral-300 leading-relaxed">
-            Motivated and detail-oriented Computer Science Engineering student with a strong foundation in 
-            frontend technologies. Passionate about building interactive, user-friendly web experiences 
-            and contributing to impactful real-world projects.
+            Motivated and detail-oriented Computer Science Engineering student
+            with a strong foundation in full-stack development, with a focus on
+            backend technologies such as Node.js, Express.js, REST APIs, and
+            MongoDB. Passionate about building scalable, user-friendly
+            applications and contributing to impactful real-world projects.
           </p>
         </motion.div>
 
@@ -38,15 +40,21 @@ export function About() {
                 <div className="p-2 bg-violet-100 dark:bg-violet-900/30 rounded-lg">
                   <GraduationCap className="h-6 w-6 text-violet-600 dark:text-violet-400" />
                 </div>
-                <h3 className="text-xl font-semibold text-neutral-900 dark:text-white">Education</h3>
+                <h3 className="text-xl font-semibold text-neutral-900 dark:text-white">
+                  Education
+                </h3>
               </div>
-              
+
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-neutral-900 dark:text-white">B.Tech in Computer Science Engineering</h4>
-                  <p className="text-neutral-600 dark:text-neutral-400">SKITM, Indore (RGPV)</p>
+                  <h4 className="font-semibold text-neutral-900 dark:text-white">
+                    B.Tech in Computer Science Engineering
+                  </h4>
+                  <p className="text-neutral-600 dark:text-neutral-400">
+                    SKITM, Indore (RGPV)
+                  </p>
                 </div>
-                
+
                 <div className="flex items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400">
                   <div className="flex items-center gap-1">
                     <Calendar className="h-4 w-4" />
@@ -73,22 +81,44 @@ export function About() {
                 <div className="p-2 bg-violet-100 dark:bg-violet-900/30 rounded-lg">
                   <MapPin className="h-6 w-6 text-violet-600 dark:text-violet-400" />
                 </div>
-                <h3 className="text-xl font-semibold text-neutral-900 dark:text-white">Contact</h3>
+                <h3 className="text-xl font-semibold text-neutral-900 dark:text-white">
+                  Contact
+                </h3>
               </div>
-              
+
               <div className="space-y-3">
                 {[
-                  { label: 'Email', value: 'rawatakash1612@gmail.com', href: 'mailto:rawatakash1612@gmail.com' },
-                  { label: 'Phone', value: '+91 7489487205', href: 'tel:+917489487205' },
-                  { label: 'GitHub', value: 'github.com/Akashrawat4561', href: 'https://github.com/Akashrawat4561' },
-                  { label: 'LinkedIn', value: 'linkedin.com/in/akash-rawat', href: 'https://linkedin.com/in/akash-rawat-bb7a0928b' }
+                  {
+                    label: "Email",
+                    value: "rawatakash1612@gmail.com",
+                    href: "mailto:rawatakash1612@gmail.com",
+                  },
+                  {
+                    label: "GitHub",
+                    value: "github.com/Akashrawat4561",
+                    href: "https://github.com/Akashrawat4561",
+                  },
+                  {
+                    label: "LinkedIn",
+                    value: "linkedin.com/in/akash-rawat",
+                    href: "https://linkedin.com/in/akash-rawat-bb7a0928b",
+                  },
                 ].map((item, index) => (
-                  <div key={index} className="flex justify-between items-center py-2 border-b border-neutral-100 dark:border-neutral-700 last:border-b-0">
-                    <span className="text-sm font-medium text-neutral-600 dark:text-neutral-400">{item.label}</span>
-                    <a 
+                  <div
+                    key={index}
+                    className="flex justify-between items-center py-2 border-b border-neutral-100 dark:border-neutral-700 last:border-b-0"
+                  >
+                    <span className="text-sm font-medium text-neutral-600 dark:text-neutral-400">
+                      {item.label}
+                    </span>
+                    <a
                       href={item.href}
-                      target={item.href.startsWith('http') ? '_blank' : undefined}
-                      rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
+                      target={
+                        item.href.startsWith("http") ? "_blank" : undefined
+                      }
+                      rel={
+                        item.href.startsWith("http") ? "noreferrer" : undefined
+                      }
                       className="text-sm text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 transition-colors font-medium"
                     >
                       {item.value}

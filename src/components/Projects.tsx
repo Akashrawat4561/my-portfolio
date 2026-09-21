@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Section } from './ui/Section';
 import { Button } from './ui/Button';
@@ -6,13 +7,35 @@ import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
 const projects = [
   {
     title: 'MindSpace',
-    tech: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Bootstrap'],
+    tech: ['React.js', 'JavaScript', 'Tailwind CSS'],
     desc: 'A comprehensive mental health tracking application that helps users monitor their moods, maintain journals, and find daily inspiration through curated quotes.',
-    image: 'MindSpace.jpg',
+    image: ['MindSpace.jpg', 'MindSpace2.png'],
+    featured: false,
+    links: {
+      live: 'https://mindspace-app-pearl.vercel.app/',
+      github: 'https://github.com/Akashrawat4561/mindspace-app'
+    }
+  },
+  {
+    title: 'ShortX URL Shortener',
+    tech: ['React', 'Node.js', 'Express', 'MongoDB'],
+    desc: 'A fast and secure URL shortener service to create compact and easy-to-share links.',
+    image: 'URLShortener.png',
+    featured: false,
+    links: {
+      live: 'https://short-x-url-shortener.vercel.app/',
+      github: 'https://github.com/Akashrawat4561/ShortX-URL-Shortener'
+    }
+  },
+  {
+    title: 'WorkScout (Opportunities OS)',
+    tech: ['React', 'Tailwind CSS', 'WebCmd', 'Node.js'],
+    desc: 'A comprehensive platform for discovering and managing career opportunities.',
+    image: 'WorkScout.png',
     featured: false,
     links: {
       live: '#',
-      github: 'https://github.com/Akashrawat4561/mindspace-app'
+      github: 'https://github.com/Akashrawat4561/opportunities_OS'
     }
   },
   {
@@ -23,25 +46,21 @@ const projects = [
     featured: false,
     links: {
       live: '#',
-      github: '#'
+      github: 'https://github.com/Akashrawat4561'
     }
-  },
-  {
-    title: 'Portfolio Website',
-    tech: ['React.js', 'TypeScript', 'Tailwind CSS'],
-    desc: 'A modern, responsive portfolio website showcasing projects and skills with smooth animations and dark mode support.',
-    image: '/portfolio.jpg', 
-    featured: false,
-    links: {
-      live: '#',
-      github: 'https://github.com/Akashrawat4561/my-portfolio'
-    }
-  }
+  } 
 ];
 
 export function Projects() {
+  const [expandedProjects, setExpandedProjects] = useState<string[]>([]);
   const featuredProject = projects.find((p) => p.featured);
   const otherProjects = projects.filter((p) => !p.featured);
+
+  const toggleExpand = (title: string) => {
+    setExpandedProjects((prev) =>
+      prev.includes(title) ? prev.filter((t) => t !== title) : [...prev, title]
+    );
+  };
 
   return (
     <Section
@@ -102,12 +121,37 @@ export function Projects() {
             </div>
 
             <div className="relative min-h-80 lg:min-h-96">
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-violet-100 to-indigo-100 dark:from-neutral-800 dark:to-neutral-700">
-                <div className="text-center">
-                  <div className="mb-4 text-6xl">🚀</div>
-                  <p className="text-neutral-600 dark:text-neutral-400">Project Preview</p>
+              {featuredProject.image ? (
+                <a href={featuredProject.links.github} target="_blank" rel="noopener noreferrer" className="absolute inset-0 block rounded-r-3xl overflow-hidden">
+                  {Array.isArray(featuredProject.image) ? (
+                    <div className="relative h-full w-full group/img bg-neutral-100 dark:bg-neutral-800">
+                      <img
+                        src={featuredProject.image[0]}
+                        alt={`${featuredProject.title} 1`}
+                        className="absolute inset-0 h-full w-full object-cover object-top transition-all duration-700 group-hover/img:opacity-0 hover:scale-105"
+                      />
+                      <img
+                        src={featuredProject.image[1]}
+                        alt={`${featuredProject.title} 2`}
+                        className="absolute inset-0 h-full w-full object-cover object-top opacity-0 transition-all duration-700 group-hover/img:opacity-100 hover:scale-105"
+                      />
+                    </div>
+                  ) : (
+                    <img
+                      src={featuredProject.image}
+                      alt={featuredProject.title}
+                      className="h-full w-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                    />
+                  )}
+                </a>
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-violet-100 to-indigo-100 dark:from-neutral-800 dark:to-neutral-700 rounded-r-3xl">
+                  <div className="text-center">
+                    <div className="mb-4 text-6xl">🚀</div>
+                    <p className="text-neutral-600 dark:text-neutral-400">Project Preview</p>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </motion.div>
@@ -126,13 +170,30 @@ export function Projects() {
           >
             <div className="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-lg transition-all duration-300 hover:shadow-2xl dark:bg-neutral-800 dark:shadow-neutral-800/50">
               {/* ✅ Image Section */}
-              <div className="relative h-48 overflow-hidden rounded-t-2xl">
+              <div className="relative aspect-video overflow-hidden rounded-t-2xl bg-neutral-100 dark:bg-neutral-800">
                 {project.image ? (
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+                  <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="block h-full w-full">
+                    {Array.isArray(project.image) ? (
+                      <div className="relative h-full w-full">
+                        <img
+                          src={project.image[0]}
+                          alt={`${project.title} 1`}
+                          className="absolute inset-0 h-full w-full object-cover object-top transition-all duration-700 group-hover:opacity-0 group-hover:scale-105"
+                        />
+                        <img
+                          src={project.image[1]}
+                          alt={`${project.title} 2`}
+                          className="absolute inset-0 h-full w-full object-cover object-top opacity-0 transition-all duration-700 group-hover:opacity-100 group-hover:scale-105"
+                        />
+                      </div>
+                    ) : (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      />
+                    )}
+                  </a>
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-violet-100 to-indigo-100 dark:from-neutral-700 dark:to-neutral-600">
                     <div className="text-center">
@@ -141,7 +202,7 @@ export function Projects() {
                     </div>
                   </div>
                 )}
-                <div className="absolute top-4 right-4 opacity-0 transition-opacity group-hover:opacity-100">
+                <div className="pointer-events-none absolute top-4 right-4 opacity-0 transition-opacity group-hover:opacity-100">
                   <ArrowUpRight className="h-5 w-5 text-neutral-600 dark:text-neutral-400" />
                 </div>
               </div>
@@ -157,7 +218,7 @@ export function Projects() {
                 </p>
 
                 <div className="mb-4 flex flex-wrap gap-2">
-                  {project.tech.slice(0, 3).map((tech) => (
+                  {(expandedProjects.includes(project.title) ? project.tech : project.tech.slice(0, 3)).map((tech) => (
                     <span
                       key={tech}
                       className="rounded-full bg-violet-100 px-3 py-1 text-xs font-medium text-violet-700 dark:bg-violet-900/30 dark:text-violet-300"
@@ -165,10 +226,21 @@ export function Projects() {
                       {tech}
                     </span>
                   ))}
-                  {project.tech.length > 3 && (
-                    <span className="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-600 dark:bg-neutral-700 dark:text-neutral-400">
+                  {project.tech.length > 3 && !expandedProjects.includes(project.title) && (
+                    <button 
+                      onClick={() => toggleExpand(project.title)}
+                      className="cursor-pointer rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-600 dark:bg-neutral-700 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-600 transition-colors"
+                    >
                       +{project.tech.length - 3}
-                    </span>
+                    </button>
+                  )}
+                  {project.tech.length > 3 && expandedProjects.includes(project.title) && (
+                    <button 
+                      onClick={() => toggleExpand(project.title)}
+                      className="cursor-pointer rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-600 dark:bg-neutral-700 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-600 transition-colors"
+                    >
+                      Less
+                    </button>
                   )}
                 </div>
 

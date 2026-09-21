@@ -6,7 +6,7 @@ import ProfileImg from './WhatsApp Image 2025-10-31 at 18.34.13_1ec6d6b3.jpg';
 export function Hero() {
   const handleDownloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/update resume.pdf';
+    link.href = 'Akash-resume.pdf';
     link.download = 'Akash_Rawat_Resume.pdf';
     document.body.appendChild(link);
     link.click();
@@ -55,7 +55,7 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="mx-auto mb-8 max-w-2xl text-xl text-neutral-600 dark:text-neutral-400 lg:mx-0"
             >
-              Aspiring Front-End Developer skilled in HTML, CSS, JavaScript, and React.js. Passionate about building responsive, user-friendly websites and continuously improving through learning and creativity.
+              Aspiring Full Stack Developer skilled in React.js, JavaScript, Node.js, Express.js, and MongoDB. Passionate about building responsive, user-friendly web applications and continuously improving through hands-on projects, learning, and problem-solving.
             </motion.p>
 
             <motion.div

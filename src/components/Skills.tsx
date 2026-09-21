@@ -6,17 +6,17 @@ import { Code, Database, Cpu, Users, Wrench } from 'lucide-react';
 const skills = {
   'Frontend Development': {
     icon: Code,
-    items: ['HTML', 'CSS', 'JavaScript', 'React.js','Bootstrap'],
+    items: ['HTML', 'CSS', 'JavaScript', 'React.js'],
     color: 'from-blue-500 to-cyan-500'
   },
   'Backend Development': {
     icon: Cpu,
-    items: ['Learning'],
+    items: ['Node.js', 'Express.js'],
     color: 'from-green-500 to-emerald-500'
   },
   'Database': {
     icon: Database,
-    items: ['Learning'],
+    items: ['MongoDB', 'SQL'],
     color: 'from-amber-500 to-orange-500'
   },
   'Programming Languages': {

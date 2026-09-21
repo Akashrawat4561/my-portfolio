@@ -1,37 +1,37 @@
-import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, MessageCircle } from 'lucide-react';
-import { Section } from './ui/Section';
-import { ContactForm } from './ContactForm';
+import { motion } from "framer-motion";
+import { Mail, Github, Linkedin, MessageCircle } from "lucide-react";
+import { Section } from "./ui/Section";
+import { ContactForm } from "./ContactForm";
 
 const contactMethods = [
   {
     icon: Mail,
-    label: 'Email',
-    value: 'rawatakash1612@gmail.com',
-    href: 'mailto:rawatakash1612@gmail.com',
-    description: 'Send me an email anytime'
+    label: "Email",
+    value: "rawatakash1612@gmail.com",
+    href: "mailto:rawatakash1612@gmail.com",
+    description: "Send me an email anytime",
   },
   {
     icon: Github,
-    label: 'GitHub',
-    value: 'Akashrawat4561',
-    href: 'https://github.com/Akashrawat4561',
-    description: 'Check out my projects'
+    label: "GitHub",
+    value: "Akashrawat4561",
+    href: "https://github.com/Akashrawat4561",
+    description: "Check out my projects",
   },
   {
     icon: Linkedin,
-    label: 'LinkedIn',
-    value: 'akash-rawat',
-    href: 'https://linkedin.com/in/akash-rawat-bb7a0928b',
-    description: 'Let\'s connect professionally'
-  }
+    label: "LinkedIn",
+    value: "akash-rawat",
+    href: "https://linkedin.com/in/akash-rawat-bb7a0928b",
+    description: "Let's connect professionally",
+  },
 ];
 
 export function Contact() {
   return (
-    <Section 
-      id="contact" 
-      title="Get In Touch" 
+    <Section
+      id="contact"
+      title="Get In Touch"
       subtitle="Ready to bring your ideas to life? Let's start a conversation."
       className="bg-gradient-to-b from-neutral-50 to-white dark:from-neutral-800 dark:to-neutral-900"
     >
@@ -52,7 +52,8 @@ export function Contact() {
                 Let's work together
               </h3>
               <p className="text-neutral-600 dark:text-neutral-400 text-lg">
-                I'm always open to discussing new opportunities and interesting projects.
+                I'm always open to discussing new opportunities and interesting
+                projects.
               </p>
             </div>
 
@@ -65,8 +66,10 @@ export function Contact() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   href={method.href}
-                  target={method.href.startsWith('http') ? '_blank' : undefined}
-                  rel={method.href.startsWith('http') ? 'noreferrer' : undefined}
+                  target={method.href.startsWith("http") ? "_blank" : undefined}
+                  rel={
+                    method.href.startsWith("http") ? "noreferrer" : undefined
+                  }
                   className="group flex items-center gap-4 rounded-2xl bg-white dark:bg-neutral-800 p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-neutral-200 dark:border-neutral-700 hover:-translate-y-1"
                 >
                   <div className="p-3 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 group-hover:from-violet-500 group-hover:to-indigo-500 transition-colors">

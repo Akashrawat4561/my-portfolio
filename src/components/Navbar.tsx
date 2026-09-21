@@ -31,14 +31,13 @@ export function Navbar() {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible) {
-          setActive(`#${visible.target.id}`);
-        }
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(`#${entry.target.id}`);
+          }
+        });
       },
-      { rootMargin: '-20% 0px -20% 0px', threshold: [0.1, 0.5] }
+      { rootMargin: '-50% 0px -50% 0px' }
     );
 
     sections.forEach((s) => observer.observe(s));
